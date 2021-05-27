@@ -137,7 +137,7 @@ GameObject:
   - component: {fileID: 252793049}
   m_Layer: 0
   m_Name: Tile1
-  m_TagString: Untagged
+  m_TagString: tile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -412,7 +412,7 @@ GameObject:
   - component: {fileID: 1011041286}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -507,7 +507,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Direction: {x: 0, y: 0, z: 0}
-  playerspeed: 3
+  playerspeed: 5
+  touch: 0
 --- !u!54 &1011041286
 Rigidbody:
   m_ObjectHideFlags: 0
