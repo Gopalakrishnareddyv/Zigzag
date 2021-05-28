@@ -576,14 +576,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1854585405969792194, guid: 93c89f1ac04f41e408fa0eef4cc185a3, type: 3}
-      propertyPath: m_Center.y
-      value: 1.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1854585405969792195, guid: 93c89f1ac04f41e408fa0eef4cc185a3, type: 3}
-      propertyPath: m_Name
-      value: collidertile
-      objectReference: {fileID: 0}
     - target: {fileID: 1854585406425817739, guid: 93c89f1ac04f41e408fa0eef4cc185a3, type: 3}
       propertyPath: m_RootOrder
       value: 4
