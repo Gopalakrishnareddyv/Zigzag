@@ -25,7 +25,7 @@ public class TilesScrpt : MonoBehaviour
             {
                 TileManagerScript.Instance.TileSpawn();
                 StartCoroutine(nameof(TileFall));
-                print("triggered");
+                //print("triggered");
             }
             
 
@@ -34,7 +34,7 @@ public class TilesScrpt : MonoBehaviour
     }
     IEnumerator TileFall()
     {
-        yield return "Coroutine";
+        //yield return "Coroutine";
         yield return new WaitForSeconds(3);
         rbtemp.isKinematic = false;
         yield return new WaitForSeconds(1);
@@ -42,11 +42,11 @@ public class TilesScrpt : MonoBehaviour
         if (rbtemp.gameObject.name =="Farwardtile")
         {
             TileManagerScript.Instance.AddFarwardTilePool(rbtemp.gameObject);
-            print("added to farward tile");
+            //print("added to farward tile");
         }else if (rbtemp.gameObject.name == "Lefttile")
         {
             TileManagerScript.Instance.AddLeftTilePool(rbtemp.gameObject);
-            print("Added to left tile");
+            //print("Added to left tile");
         }
     }
     
