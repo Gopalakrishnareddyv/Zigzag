@@ -42,8 +42,20 @@ public class TileManagerScript : MonoBehaviour
             leftTilePool.Push(Instantiate(tiles[1]));
             farwardTilePool.Peek().SetActive(false);
             leftTilePool.Peek().SetActive(false);
+            farwardTilePool.Peek().name = "Farwardtile";
+            leftTilePool.Peek().name = "Lefttile";
         }
         
+    }
+    public void AddFarwardTilePool(GameObject tempObj)
+    {
+        farwardTilePool.Push(tempObj);
+        farwardTilePool.Peek().SetActive(false);
+    }
+    public void AddLeftTilePool(GameObject tempObj)
+    {
+        leftTilePool.Push(tempObj);
+        leftTilePool.Peek().SetActive(false);
     }
     public void TileSpawn()
     {
@@ -54,16 +66,16 @@ public class TileManagerScript : MonoBehaviour
         int index = Random.Range(0, tiles.Length);
         if (index == 0)
         {
-            GameObject temp = farwardTilePool.Pop();
-            temp.SetActive(true);
-            temp.transform.position = currenttile.transform.GetChild(index).position;
-            currenttile = temp;
+            GameObject tempfar = farwardTilePool.Pop();
+            tempfar.SetActive(true);
+            tempfar.transform.position = currenttile.transform.GetChild(0).position;
+            currenttile = tempfar;
         }
         else if (index == 1)
         {
             GameObject temp = leftTilePool.Pop();
             temp.SetActive(true);
-            temp.transform.position = currenttile.transform.GetChild(index).position;
+            temp.transform.position = currenttile.transform.GetChild(1).position;
             currenttile = temp;
         }
         
