@@ -8,6 +8,7 @@ public class PlayerMovement : MonoBehaviour
     Vector3 Direction;
 
     public float playerspeed;
+    public GameObject particleprefab;
     // Start is called before the first frame update
     void Start()
     {
@@ -36,6 +37,7 @@ public class PlayerMovement : MonoBehaviour
         if (other.gameObject.tag == "coin")
         {
             other.gameObject.SetActive(false);
+            Instantiate(particleprefab, transform.position, Quaternion.identity);
         }
     }
 }
