@@ -78,7 +78,12 @@ public class TileManagerScript : MonoBehaviour
             temp.transform.position = currenttile.transform.GetChild(1).position;
             currenttile = temp;
         }
-        
+        //spawn the coins randomly
+       if (Random.Range(0, 10) == 0)
+        {
+            currenttile.transform.GetChild(3).gameObject.SetActive(true);
+
+        }
 
     }
 }

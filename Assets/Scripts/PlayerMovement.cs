@@ -31,4 +31,11 @@ public class PlayerMovement : MonoBehaviour
         }
         transform.Translate(Direction * playerspeed * Time.deltaTime);
     }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "coin")
+        {
+            other.gameObject.SetActive(false);
+        }
+    }
 }
