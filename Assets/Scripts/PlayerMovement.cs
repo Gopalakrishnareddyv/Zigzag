@@ -8,16 +8,19 @@ public class PlayerMovement : MonoBehaviour
     Vector3 Direction;
 
     public GameObject winui;
+    public GameObject lossui;
+
     PlayerMovement playermove;
 
     public float playerspeed;
     public GameObject particleprefab;
     [SerializeField]
-    int score = 0;
+    public int score = 0;
     // Start is called before the first frame update
     void Start()
     {
         playermove = GetComponent<PlayerMovement>();
+        
     }
 
 
@@ -45,18 +48,31 @@ public class PlayerMovement : MonoBehaviour
         if (other.gameObject.tag == "coin")
         {
             score = score + 10;
-            print(score);
+            //print(score);
             other.gameObject.SetActive(false);
             Instantiate(particleprefab, transform.position, Quaternion.identity);
-            if (score >=20)
+            if (score >=50)
             {
                 winui.SetActive(true);
-                transform.position = new Vector3(-1.5f, 1, -2);
+                //transform.position = new Vector3(-1.5f, 1, -2);
                 playermove.playerspeed = 0;
             }
         }
     }
-   
+    private void FixedUpdate()
+    {
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position, Vector3.down,out hit, Mathf.Infinity))
+        {
+            
+        }
+        else
+        {
+            lossui.SetActive(true);
+        }
+    }
+    
+
 
 
 }

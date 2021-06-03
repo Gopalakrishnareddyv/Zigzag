@@ -6,6 +6,7 @@ public class PlayerDeadScript : MonoBehaviour
 {
     public GameObject deathui;
     PlayerMovement playermove;
+
     // Start is called before the first frame update
     void Start()
     {
